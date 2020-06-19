@@ -23,11 +23,11 @@ namespace IdentityServer3.Admin.MongoDb.Powershell
 {
     internal static class MongoClientExtensions
     {
-        public static async Task<bool> DatabaseExistsAsync(this IMongoClient client,string name)
+        public static async Task<bool> DatabaseExistsAsync(this IMongoClient client, string name)
         {
             var cursor = await client.ListDatabasesAsync();
             var databases = await cursor.ToListAsync();
-            return databases.Any(x => string.Equals(x["name"].AsString,name, StringComparison.OrdinalIgnoreCase));
+            return databases.Any(x => string.Equals(x["name"].AsString, name, StringComparison.OrdinalIgnoreCase));
         }
     }
 

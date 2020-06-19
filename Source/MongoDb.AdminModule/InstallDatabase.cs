@@ -29,7 +29,7 @@ namespace IdentityServer3.Admin.MongoDb.Powershell
 
         protected override void ProcessRecord()
         {
-            AdminService.CreateDatabase().Wait();
+            AdminService.CreateDatabase().GetAwaiter().GetResult();
         }
     }
 }

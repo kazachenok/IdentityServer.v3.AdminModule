@@ -28,9 +28,7 @@ namespace IdentityServer3.Admin.MongoDb.Powershell
 
         protected override void ProcessRecord()
         {
-            AdminService.Save(Client).Wait();
+            AdminService.Save(Client).GetAwaiter().GetResult();
         }
-
-
     }
 }

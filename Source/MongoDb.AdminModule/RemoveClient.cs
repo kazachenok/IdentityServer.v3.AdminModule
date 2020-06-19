@@ -26,7 +26,7 @@ namespace IdentityServer3.Admin.MongoDb.Powershell
 
         protected override void ProcessRecord()
         {
-            AdminService.DeleteClient(ClientId).Wait();
+            AdminService.DeleteClient(ClientId).GetAwaiter().GetResult();
         }
     }
 }
